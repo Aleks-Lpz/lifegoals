@@ -1,0 +1,49 @@
+.navbar {
+  background-color: #0b0f19;
+  border-bottom: 2px solid #10b981; /* Verde esmeralda */
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #9ca3af; /* Gris claro */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #10b981; /* Cambio a verde en hover */
+}
+
+/* Clase automática de Angular para el enlace activo */
+.active-link {
+  color: #10b981 !important;
+  font-weight: bold;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}

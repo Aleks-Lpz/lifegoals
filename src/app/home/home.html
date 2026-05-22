@@ -1,0 +1,30 @@
+<div class="home-layout">
+  <div class="input-section">
+    <h3>New Goal</h3>
+    <div class="field-group">
+      <input 
+        type="text" 
+        [(ngModel)]="nuevaMetaTexto" 
+        placeholder="Type a life goal..." 
+        class="flat-input"
+        (keyup.enter)="guardarMeta()"
+      />
+      <button (click)="guardarMeta()" class="flat-btn">Add Goal</button>
+    </div>
+  </div>
+
+  <div class="list-section">
+    <h3>Current Goals ({{ listaMetas.length }})</h3>
+    
+    <div class="goals-list">
+      <div *ngFor="let m of listaMetas" class="goal-row">
+        <span class="goal-text">{{ m.meta }}</span>
+<button (click)="eliminarMeta(m.id)" class="delete-link">Remove</button>
+      </div>
+      
+      <div *ngIf="listaMetas.length === 0" class="empty-state">
+        No goals scheduled.
+      </div>
+    </div>
+  </div>
+</div>

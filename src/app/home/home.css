@@ -1,0 +1,103 @@
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+h3 {
+  margin-top: 0;
+  color: #f0f6fc;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.2px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Input minimalista sin bordes gruesos */
+.flat-input {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #f0f6fc;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.flat-input:focus {
+  border-color: #58a6ff;
+}
+
+/* Botón sólido y plano */
+.flat-btn {
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.flat-btn:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+  color: #f0f6fc;
+}
+
+/* Lista de metas integrada */
+.goals-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #21262d; /* Líneas divisorias finas en vez de cajas separadas */
+}
+
+.goal-text {
+  font-size: 0.95rem;
+  color: #e6edf3;
+}
+
+/* Botón eliminar estilo texto/enlace */
+.delete-link {
+  background: none;
+  border: none;
+  color: #f85149;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.delete-link:hover {
+  background-color: rgba(248, 81, 73, 0.1);
+}
+
+.empty-state {
+  color: #8b949e;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  font-style: italic;
+}
