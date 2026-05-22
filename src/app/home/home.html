@@ -1,6 +1,6 @@
 <div class="home-layout">
   <div class="input-section">
-    <h3>New Goal</h3>
+    <h3>Nueva meta</h3>
     <div class="field-group">
       <input 
         type="text" 
@@ -9,21 +9,21 @@
         class="flat-input"
         (keyup.enter)="guardarMeta()"
       />
-      <button (click)="guardarMeta()" class="flat-btn">Add Goal</button>
+      <button (click)="guardarMeta()" class="flat-btn">Anadir meta</button>
     </div>
   </div>
 
   <div class="list-section">
-    <h3>Current Goals ({{ listaMetas.length }})</h3>
+    <h3>Metas actuales ({{ listaMetas.length }})</h3>
     
     <div class="goals-list">
       <div *ngFor="let m of listaMetas" class="goal-row">
         <span class="goal-text">{{ m.meta }}</span>
-<button (click)="eliminarMeta(m.id)" class="delete-link">Remove</button>
+<button (click)="eliminarMeta(m.id)" class="delete-link">Eliminar</button>
       </div>
       
       <div *ngIf="listaMetas.length === 0" class="empty-state">
-        No goals scheduled.
+        Sin metas agregadas.
       </div>
     </div>
   </div>
