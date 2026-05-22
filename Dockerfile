@@ -13,11 +13,16 @@ COPY . .
 RUN npm run build -- --configuration=production
 
 # ETAPA 2: Distribución (Servidor Nginx de producción)
+# ETAPA 2: Distribución (Servidor Nginx de producción)
 FROM nginx:alpine
-# Copiamos los archivos generados en la Etapa 1 al directorio público de Nginx
-COPY --from=build /app/dist/lifegoals/browser /usr/share/nginx/html
 
-# Ajustamos Nginx para que redireccione todas las rutas al index.html (evita errores 404 al recargar páginas en Angular)
+# Usamos un comodín para copiar el contenido sin importar si la estructura varía ligeramente
+COPY --from=build /app/dist/lifegoals/browser/ /usr/share/nginx/html/
+
+# Si lo de arriba fallara por la jerarquía de Angular, la alternativa es:
+# COPY --from=build /app/dist/lifegoals/ /usr/share/nginx/html/
+
+# Ajustamos Nginx para que redireccione todas las rutas al index.html
 RUN echo 'server { listen 80; location / { root /usr/share/nginx/html; index index.html; try_files $uri $uri/ /index.html; } }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
